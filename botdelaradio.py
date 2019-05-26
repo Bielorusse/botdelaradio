@@ -34,6 +34,6 @@ if __name__ == "__main__":
     auth.set_access_token(access_token, access_token_secret)
     api = tweepy.API(auth)
 
-    shows_infos_string = fetch_shows_infos()
+    broadcasting_infos = fetch_broadcasting_infos()
 
-    api.update_status(status=shows_infos_string)
+    api.update_status(status=broadcasting_infos)

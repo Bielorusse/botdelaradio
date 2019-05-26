@@ -2,11 +2,28 @@
 
 This bot tweets periodically radio broadcasting information.
 
-## Install requirements using virtualenv
+## Requirements:
+- python3
+- tweepy
+- a twitter developer account
 
-1. Create new environment
-    `virtualenv "dir" -p python3` (where dir is the directory where you want to install the virtual environment for botdelaradio)
-2. Activate newly created environment
-    `source "dir"/bin/activate`
-3. Install dependencies
-    `pip install -r requirements.txt`
+## Example of installation using git and conda
+
+1. Clone the repository in the directory of your choice:
+
+    `$ git clone https://github.com/Bielorusse/botdelaradio.git`
+
+2. Create a new conda environment with the dependencies:
+
+    `$ conda create -n botdelaradio python=3 tweepy`
+
+3. Activate the newly created environment:
+
+    `$ conda activate botdelaradio`
+
+4. Create a duplicate of the example config with the filename `config.ini` and
+fill this file with your twitter developer account credentials.
+
+## Usage
+
+`python botdelaradio.py`
