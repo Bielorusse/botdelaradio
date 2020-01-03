@@ -3,6 +3,7 @@ Main script for franceinterbot.
 """
 
 import os
+import sys
 import datetime
 import locale
 import tweepy
@@ -106,7 +107,7 @@ def demandez_le_programme():
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
 
         else:
-            le_programme = "Emission en cours."
+            sys.exit()
 
 
     """
@@ -185,7 +186,7 @@ def demandez_le_programme():
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
 
         else:
-            le_programme = "Emission en cours."
+            sys.exit()
 
 
     """
@@ -264,7 +265,7 @@ def demandez_le_programme():
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
 
         else:
-            le_programme = "Emission en cours."
+            sys.exit()
 
 
     """
@@ -337,7 +338,7 @@ def demandez_le_programme():
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
 
         else:
-            le_programme = "Emission en cours."
+            sys.exit()
 
 
 
