@@ -340,6 +340,7 @@ def demandez_le_programme():
         else:
             sys.exit()
 
+    return le_programme
 
 
 if __name__ == "__main__":
