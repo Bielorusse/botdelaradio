@@ -4,19 +4,19 @@ Main script for franceinterbot.
 
 import os
 import sys
-import datetime
 import locale
-import tweepy
 import configparser
+from datetime import datetime, date, time
+import tweepy
+
 
 def demandez_le_programme():
+
     """
     Fourni heure par heure le programme de France Inter
     Sortie :
         -le_programme     str
     """
-
-    from datetime import datetime, date, time
 
     locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
 
@@ -59,7 +59,7 @@ def demandez_le_programme():
             le_programme = "Il est 12h45, l'heure du jeu des 1000 € sur France Inter.\n https://www.franceinter.fr/emissions/le-jeu-des-1000-eu/le-jeu-des-1000-eu-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 0:
-            le_programme = "Il est 13h, l'heure du journal de 13h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h/le-journal-de-13h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 13h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h/le-journal-de-13h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 30:
             le_programme = "Il est 13h30, l'heure de La terre au carré sur France Inter.\n https://www.franceinter.fr/emissions/la-terre-au-carre/la-terre-au-carre-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -77,13 +77,13 @@ def demandez_le_programme():
             le_programme = "Il est 17h, l'heure de Par Jupiter ! sur France Inter.\n https://www.franceinter.fr/emissions/par-jupiter/par-jupiter-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 0:
-            le_programme = "Il est 18h, l'heure du journal de 18h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h/le-journal-de-18h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 18h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h/le-journal-de-18h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 15:
             le_programme = "Il est 18h15, l'heure d'Un jour dans le monde sur France Inter.\n https://www.franceinter.fr/emissions/un-jour-dans-le-monde/un-jour-dans-le-monde-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 0:
-            le_programme = "Il est 19h, l'heure du journal de 19h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h/le-journal-de-19h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 19h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h/le-journal-de-19h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 20:
             le_programme = "Il est 19h20, l'heure du téléphone sonne sur France Inter.\n https://www.franceinter.fr/emissions/le-telephone-sonne/le-telephone-sonne-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -98,7 +98,7 @@ def demandez_le_programme():
             le_programme = "Il est 22h, l'heure du nouveau rendez-vous sur France Inter.\n https://www.franceinter.fr/emissions/le-nouveau-rendez-vous/le-nouveau-rendez-vous-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 0:
-            le_programme = "Il est 23h, l'heure du journal de 23h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h/le-journal-de-23h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h/le-journal-de-23h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 15:
             le_programme = "Il est 23h15, l'heure du nouveau rendez-vous : France Inter + sur France Inter.\n https://www.franceinter.fr/emissions/le-nouveau-rendez-vous-france-inter/le-nouveau-rendez-vous-france-inter-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -141,7 +141,7 @@ def demandez_le_programme():
             le_programme = "Il est 12h45, l'heure du jeu des 1000 € sur France Inter.\n https://www.franceinter.fr/emissions/le-jeu-des-1000-eu/le-jeu-des-1000-eu-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 0:
-            le_programme = "Il est 13h, l'heure du journal de 13h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h/le-journal-de-13h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 13h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h/le-journal-de-13h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 30:
             le_programme = "Il est 13h30, l'heure de La terre au carré sur France Inter.\n https://www.franceinter.fr/emissions/la-terre-au-carre/la-terre-au-carre-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -159,13 +159,13 @@ def demandez_le_programme():
             le_programme = "Il est 17h, l'heure de Par Jupiter ! sur France Inter.\n https://www.franceinter.fr/emissions/par-jupiter/par-jupiter-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 0:
-            le_programme = "Il est 18h, l'heure du journal de 18h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h/le-journal-de-18h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 18h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h/le-journal-de-18h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 15:
             le_programme = "Il est 18h15, l'heure d'Une semaine en France sur France Inter.\n https://www.franceinter.fr/emissions/une-semaine-en-france/une-semaine-en-france-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 0:
-            le_programme = "Il est 19h, l'heure du journal de 19h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h/le-journal-de-19h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 19h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h/le-journal-de-19h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 20:
             le_programme = "Il est 19h20, l'heure du téléphone sonne sur France Inter.\n https://www.franceinter.fr/emissions/le-telephone-sonne/le-telephone-sonne-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -177,10 +177,10 @@ def demandez_le_programme():
             le_programme = "Il est 21h, l'heure de Côté club sur France Inter.\n https://www.franceinter.fr/emissions/cote-club/cote-club-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 0:
-            le_programme = "Il est 23h, l'heure du journal de 23h sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h/le-journal-de-23h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h/le-journal-de-23h-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 15:
-            le_programme = "Il est 23h15, l'heure du journal de 23h sur France Inter.\n https://www.franceinter.fr/emissions/le-nouveau-rendez-vous-france-inter/le-nouveau-rendez-vous-france-inter-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h15, l'heure de la suite de Côté club sur France Inter.\n https://www.franceinter.fr/emissions/cote-club/cote-club-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 59:
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
@@ -211,7 +211,7 @@ def demandez_le_programme():
             le_programme = "Il est midi, l'heure du grand face à face sur France Inter.\n https://www.franceinter.fr/emissions/le-grand-face-a-face/le-grand-face-a-face-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 0:
-            le_programme = "Il est 13h, l'heure du journal de 13h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h-du-week-end/le-journal-de-13h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 13h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h-du-week-end/le-journal-de-13h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 20:
             le_programme = "Il est 13h20, l'heure des Secrets d'info sur France Inter.\n https://www.franceinter.fr/emissions/secrets-d-info/secrets-d-info-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -220,22 +220,22 @@ def demandez_le_programme():
             le_programme = "Il est 14h, l'heure de La librairie francophone sur France Inter.\n https://www.franceinter.fr/emissions/la-librairie-francophone/la-librairie-francophone-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 15 and mi == 0:
-            le_programme = "Il est 15h, l'heure de Du vent dans les synapses sur France Inter.\n https://www.franceinter.fr/emissions/du-vent-dans-les-synapses/du-vent-dans-les-synapses-{0:%d}-{0:%B}-{0:%Y}-0".format(ajd)
+            le_programme = "Il est 15h, l'heure Du vent dans les synapses sur France Inter.\n https://www.franceinter.fr/emissions/du-vent-dans-les-synapses/du-vent-dans-les-synapses-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 16 and mi == 0:
-            le_programme = "Il est 16h, l'heure la seconde partie de Du vent dans les synapses sur France Inter.\n https://www.franceinter.fr/emissions/du-vent-dans-les-synapses/du-vent-dans-les-synapses-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 16h, l'heure de la seconde partie Du vent dans les synapses sur France Inter.\n https://www.franceinter.fr/emissions/du-vent-dans-les-synapses/du-vent-dans-les-synapses-{0:%d}-{0:%B}-{0:%Y}-0".format(ajd)
 
         elif h == 17 and mi == 0:
             le_programme = "Il est 17h, l'heure de La preuve par Z sur France Inter.\n https://www.franceinter.fr/emissions/la-preuve-par-z/la-preuve-par-z-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 0:
-            le_programme = "Il est 18h, l'heure du journal de 18h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h-du-week-end/le-journal-de-18h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 18h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h-du-week-end/le-journal-de-18h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 10:
             le_programme = "Il est 18h10, l'heure de Ça peut pas faire de mal sur France Inter.\n https://www.franceinter.fr/emissions/ca-peut-pas-faire-de-mal/ca-peut-pas-faire-de-mal-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 0:
-            le_programme = "Il est 19h, l'heure du journal de 19h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h-du-week-end/le-journal-de-19h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 19h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h-du-week-end/le-journal-de-19h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 20:
             le_programme = "Il est 19h20, l'heure de L'humeur vagabonde sur France Inter.\n https://www.franceinter.fr/emissions/l-humeur-vagabonde/l-humeur-vagabonde-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -253,10 +253,10 @@ def demandez_le_programme():
             le_programme = "Il est 22h00, l'heure de Foule continentale sur France Inter.\n https://www.franceinter.fr/emissions/foule-continentale/foule-continentale-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 0:
-            le_programme = "Il est 23h, l'heure du journal de 23h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h-du-week-end/le-journal-de-23h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h-du-week-end/le-journal-de-23h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 15:
-            le_programme = "Il est 23h15, l'heure de C'est bientôt demain sur France Inter.\n https://www.franceinter.fr/emissions/c-est-bientot-demain/c-est-bientot-demain-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h15, C'est bientôt demain sur France Inter.\n https://www.franceinter.fr/emissions/c-est-bientot-demain/c-est-bientot-demain-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 35:
             le_programme = "Il est 23h35, l'heure des vies françaises sur France Inter.\n https://www.franceinter.fr/emissions/des-vies-francaises/des-vies-francaises-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -290,7 +290,7 @@ def demandez_le_programme():
             le_programme = "Il est midi, l'heure des Questions politiques sur France Inter.\n https://www.franceinter.fr/emissions/questions-politiques/questions-politiques-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 0:
-            le_programme = "Il est 13h, l'heure du journal de 13h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h-du-week-end/le-journal-de-13h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 13h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-13h-du-week-end/le-journal-de-13h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 13 and mi == 20:
             le_programme = "Il est 13h20, l'heure de CO2 mon amour sur France Inter.\n https://www.franceinter.fr/emissions/co2-mon-amour/co2-mon-amour-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -299,19 +299,19 @@ def demandez_le_programme():
             le_programme = "Il est 14h, l'heure d'Une journée particulière sur France Inter.\n https://www.franceinter.fr/emissions/une-journee-particuliere/une-journee-particuliere-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 15 and mi == 0:
-            le_programme = "Il est 15h, l'heure du grand atelier sur France Inter.\n https://www.franceinter.fr/emissions/le-grand-atelier/le-grand-atelier-{0:%d}-{0:%B}-{0:%Y}-0".format(ajd)
+            le_programme = "Il est 15h, l'heure du grand atelier sur France Inter.\n https://www.franceinter.fr/emissions/le-grand-atelier/le-grand-atelier-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 17 and mi == 0:
             le_programme = "Il est 17h, l'heure d'Et je remets le son sur France Inter.\n https://www.franceinter.fr/emissions/et-je-remets-le-son/et-je-remets-le-son-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 0:
-            le_programme = "Il est 18h, l'heure du journal de 18h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h-du-week-end/le-journal-de-18h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 18h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-18h-du-week-end/le-journal-de-18h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 18 and mi == 10:
             le_programme = "Il est 18h10, l'heure de L'œil du tigre sur France Inter.\n https://www.franceinter.fr/emissions/l-oeil-du-tigre/l-oeil-du-tigre-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 0:
-            le_programme = "Il est 19h, l'heure du journal de 19h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h-du-week-end/le-journal-de-19h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 19h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-19h-du-week-end/le-journal-de-19h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 19 and mi == 30:
             le_programme = "Il est 19h30, l'heure des p'tits bateaux sur France Inter.\n https://www.franceinter.fr/emissions/les-p-tits-bateaux/les-p-tits-bateaux-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
@@ -329,10 +329,10 @@ def demandez_le_programme():
             le_programme = "Il est 22h00, l'heure de Modern Love sur France Inter.\n https://www.franceinter.fr/emissions/modern-love/modern-love-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 0:
-            le_programme = "Il est 23h, l'heure du journal de 23h du week-end sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h-du-week-end/le-journal-de-23h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h, l'heure du journal sur France Inter.\n https://www.franceinter.fr/emissions/le-journal-de-23h-du-week-end/le-journal-de-23h-du-week-end-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 15:
-            le_programme = "Il est 23h15, l'heure de la suite de Mordern Love sur France Inter.\n https://www.franceinter.fr/emissions/modern-love/modern-love-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
+            le_programme = "Il est 23h15, l'heure d'Un été avec Homère sur France Inter.\n https://www.franceinter.fr/emissions/un-ete-avec-homere/un-ete-avec-homere-{0:%d}-{0:%B}-{0:%Y}".format(ajd)
 
         elif h == 23 and mi == 59:
             le_programme = "C'est la nuit. Place aux rediffusions et à la musique sur France Inter."
