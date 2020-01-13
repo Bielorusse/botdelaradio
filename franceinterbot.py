@@ -362,3 +362,6 @@ if __name__ == "__main__":
     le_programme = demandez_le_programme()
 
     api.update_status(status=le_programme)
+
+    with open("/home/franceinterbot/franceinterbot/log.txt", "a") as outfile:
+        outfile.write("{} - {}\n".format(datetime.now(), le_programme))
