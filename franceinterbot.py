@@ -363,5 +363,9 @@ if __name__ == "__main__":
 
     api.update_status(status=le_programme)
 
-    with open("/home/franceinterbot/franceinterbot/log.txt", "a") as outfile:
+    # write to log file
+    log_file = os.path.join(franceinterbot_project_path, "log", "log.txt")
+    if not os.path.exists(os.path.join(franceinterbot_project_path, "log")):
+        os.makedirs(os.path.join(franceinterbot_project_path, "log"))
+    with open(log_file, "a") as outfile:
         outfile.write("{} - {}\n".format(datetime.now(), le_programme))
